@@ -1,6 +1,7 @@
 # vkmax  
 [![License: ISC](https://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/Grovvik/vkmax-nodejs/blob/main/LICENSE) [![NPM Version](https://img.shields.io/npm/v/vkmax)
 ](https://npmjs.com/package/vkmax)
+
 Node.js user client for VK MAX messenger (OneMe)  
 
 *Note: This project is an independent implementation of a client library for VK MAX in Node.js, inspired by existing solutions.*  
