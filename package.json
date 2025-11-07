@@ -1,0 +1,32 @@
+{
+  "name": "vkmax",
+  "version": "1.0.0",
+  "description": "NodeJS user client for VK MAX messenger (OneMe)",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "uuid": "^13.0.0",
+    "ws": "^8.18.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grovvik/vkmax-nodejs.git"
+  },
+  "keywords": [
+    "vkmax",
+    "max",
+    "vk",
+    "oneme",
+    "max-messenger",
+    "vkapi"
+  ],
+  "author": "Grovv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grovvik/vkmax-nodejs/issues"
+  },
+  "homepage": "https://github.com/Grovvik/vkmax-nodejs#readme"
+}
