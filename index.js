@@ -236,4 +236,4 @@ class MaxClient {
     }
 }
 
-module.exports = MaxClient;
+module.exports = {MaxClient, ...require('./messages.js')};
