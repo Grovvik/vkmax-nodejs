@@ -12,7 +12,7 @@ The platform is developed by VK Group.
 
 ## What is `vkmax`?  
 This library provides a client interface for interacting with VK MAX, enabling the creation of userbots and custom clients.  
-A simple example of a userbot that responds to commands can be found in [examples/userbot](examples/userbot).  
+A simple example of a userbot can be found in [examples/userbot](examples/userbot).  
 
 ## Installation  
 The package is available on npm:  
