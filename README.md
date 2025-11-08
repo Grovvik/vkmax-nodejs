@@ -4,7 +4,7 @@
 
 Node.js user client for VK MAX messenger (OneMe)  
 
-*Note: This project is an independent implementation of a client library for VK MAX in Node.js, inspired by existing solutions.*  
+*Note: This repository is a rewrite of the [vkmax](https://github.com/nsdkinx/vkmax) library from Python to Node.js.*
 
 ## What is VK MAX?  
 MAX (internal codename OneMe) is a project initiated by the Russian government to develop a unified domestic messaging platform, featuring integration with government services such as Gosuslugi/ESIA for authentication.  
