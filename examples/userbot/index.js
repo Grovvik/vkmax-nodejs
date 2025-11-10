@@ -53,6 +53,11 @@ async function main() {
             await deleteMessage(client, chatId, [testMessage.payload.message.id], false);
             console.log('message deleted');
         }
+        await new Promise((resolve) => {
+            // keep process running
+            process.stdin.resume();
+            process.stdin.on('end', resolve);
+        });
 
     } catch (err) {
         console.error(err);
@@ -67,4 +72,5 @@ async function main() {
 }
 
 main().catch(console.error);
+
 
