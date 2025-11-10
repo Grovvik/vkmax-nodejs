@@ -18,11 +18,9 @@ function ask(question) {
 }
 
 async function main() {
-    console.log()
     const client = new MaxClient();
 
     try {
-        console.log('Connecting...');
         await client.connect();
         let lastmsg = 0;
         let chatId;
@@ -38,11 +36,10 @@ async function main() {
 
         const phone = await ask('Enter your phone number (e.g. +79991234567): ');
         const token = await client.sendCode(phone);
-        console.log('authentication token received');
-
         const smsCode = await ask('Enter the SMS code you received: ');
-        console.log((await client.signIn(token, smsCode)).payload.tokenAttrs.LOGIN.token);
-        // await client.loginByToken(''); // Or use a token for login
+        const tkn = ((await client.signIn(token, smsCode)).payload.tokenAttrs.LOGIN.token);
+        // const tkn = ''; // Or use a token for login
+        await client.loginByToken(tkn);
         console.log('successfully logged in');
 
         const chatIdInput = await ask('Enter chat ID to interact with: ');
@@ -56,12 +53,6 @@ async function main() {
             await deleteMessage(client, chatId, [testMessage.payload.message.id], false);
             console.log('message deleted');
         }
-        console.log('\nListening for incoming events (Ctrl+C to exit)');
-        await new Promise((resolve) => {
-            // keep process running
-            process.stdin.resume();
-            process.stdin.on('end', resolve);
-        });
 
     } catch (err) {
         console.error(err);
@@ -76,3 +67,4 @@ async function main() {
 }
 
 main().catch(console.error);
+
