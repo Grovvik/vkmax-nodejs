@@ -27,8 +27,6 @@ class MaxClient {
         if (this._connection) {
             throw new Error("Already connected");
         }
-
-        console.log(`Connecting to ${WS_HOST}...`);
         
         this._ws = new WebSocket(WS_HOST, {
             headers: {
@@ -40,7 +38,6 @@ class MaxClient {
         return new Promise((resolve, reject) => {
             this._ws.on('open', () => {
                 this._connection = this._ws;
-                console.log('Connected. Receive task started.');
                 
                 this._ws.on('message', (data) => {
                     this._handleMessage(JSON.parse(data.toString()));
@@ -88,8 +85,6 @@ class MaxClient {
             "opcode": opcode,
             "payload": payload
         };
-        
-        console.log(`-> REQUEST:`, request);
 
         return new Promise((resolve, reject) => {
             this._pending.set(seq, { resolve, reject });
@@ -194,7 +189,6 @@ class MaxClient {
         } catch {
             console.warn('Got no phone number in server response');
         }
-        console.log(`Successfully logged in as ${phone}`);
 
         this._is_logged_in = true;
         await this._startKeepaliveTask();
@@ -205,7 +199,6 @@ class MaxClient {
     async loginByToken(token) {
         this._ensureConnected();
         await this._sendHelloPacket();
-        console.log("using session");
         
         const loginResponse = await this.invokeMethod(19, {
             "interactive": true,
@@ -227,7 +220,6 @@ class MaxClient {
         } catch {
             console.warn('Got no phone number in server response');
         }
-        console.log(`Successfully logged in as ${phone}`);
 
         this._is_logged_in = true;
         await this._startKeepaliveTask();
@@ -235,5 +227,6 @@ class MaxClient {
         return loginResponse;
     }
 }
+
 
 module.exports = {MaxClient, ...require('./messages.js')};
