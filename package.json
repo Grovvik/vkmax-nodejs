@@ -1,6 +1,6 @@
 {
   "name": "vkmax",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "NodeJS user client for VK MAX messenger (OneMe)",
   "main": "index.js",
   "dependencies": {
